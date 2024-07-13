@@ -8,6 +8,7 @@ class TestReview:
     def test_can_be_instantiated(self):
         '''can be invoked to create a Python object.'''
         r = Review()
+
         assert r
         assert isinstance(r, Review)
 
@@ -25,7 +26,6 @@ class TestReview:
             db.session.commit()
             assert hasattr(r, 'id')
             assert db.session.query(Review).filter_by(id=r.id).first()
-
     def test_is_related_to_customer_and_item(self):
         '''has foreign keys and relationships'''
         with app.app_context():

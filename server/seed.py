@@ -20,7 +20,6 @@ with app.app_context():
     item3 = Item(name='6 Foot HDMI Cable', price=12.99)
     db.session.add_all([item1, item2, item3])
     db.session.commit()
-
     db.session.add(Review(comment="zipper broke the first week",
                    customer=customer1, item=item1))
     db.session.add(Review(comment="love this backpack!",
